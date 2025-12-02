@@ -1,0 +1,1802 @@
+[
+  {
+    "id": "P001",
+    "category": "Access",
+    "rule": "No login between 20:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P002",
+    "category": "Access",
+    "rule": "No login between 20:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P003",
+    "category": "Access",
+    "rule": "No login between 18:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P004",
+    "category": "Access",
+    "rule": "No login between 19:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P005",
+    "category": "Access",
+    "rule": "No login between 22:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P006",
+    "category": "Access",
+    "rule": "No login between 22:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P007",
+    "category": "Access",
+    "rule": "No login between 18:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P008",
+    "category": "Access",
+    "rule": "No login between 21:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P009",
+    "category": "Access",
+    "rule": "No login between 22:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P010",
+    "category": "Access",
+    "rule": "No login between 18:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P011",
+    "category": "Access",
+    "rule": "No login between 20:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P012",
+    "category": "Access",
+    "rule": "No login between 21:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P013",
+    "category": "Access",
+    "rule": "No login between 20:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P014",
+    "category": "Access",
+    "rule": "No login between 18:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P015",
+    "category": "Access",
+    "rule": "No login between 19:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P016",
+    "category": "Access",
+    "rule": "No login between 22:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P017",
+    "category": "Access",
+    "rule": "No login between 21:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P018",
+    "category": "Access",
+    "rule": "No login between 18:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P019",
+    "category": "Access",
+    "rule": "No login between 22:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P020",
+    "category": "Access",
+    "rule": "No login between 20:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P021",
+    "category": "Access",
+    "rule": "No login between 19:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P022",
+    "category": "Access",
+    "rule": "No login between 19:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P023",
+    "category": "Access",
+    "rule": "No login between 22:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P024",
+    "category": "Access",
+    "rule": "No login between 22:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P025",
+    "category": "Access",
+    "rule": "No login between 21:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P026",
+    "category": "Access",
+    "rule": "No login between 22:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P027",
+    "category": "Access",
+    "rule": "No login between 19:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P028",
+    "category": "Access",
+    "rule": "No login between 21:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P029",
+    "category": "Access",
+    "rule": "No login between 21:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P030",
+    "category": "Access",
+    "rule": "No login between 23:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P031",
+    "category": "Access",
+    "rule": "No login between 18:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P032",
+    "category": "Access",
+    "rule": "No login between 18:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P033",
+    "category": "Access",
+    "rule": "No login between 18:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P034",
+    "category": "Access",
+    "rule": "No login between 23:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P035",
+    "category": "Access",
+    "rule": "No login between 19:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P036",
+    "category": "Access",
+    "rule": "No login between 19:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P037",
+    "category": "Access",
+    "rule": "No login between 18:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P038",
+    "category": "Access",
+    "rule": "No login between 22:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P039",
+    "category": "Access",
+    "rule": "No login between 19:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P040",
+    "category": "Access",
+    "rule": "No login between 21:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P041",
+    "category": "Access",
+    "rule": "No login between 21:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P042",
+    "category": "Access",
+    "rule": "No login between 22:00 and 06:00",
+    "signal_channel": "s_logon_time"
+  },
+  {
+    "id": "P043",
+    "category": "Access",
+    "rule": "Max 9 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P044",
+    "category": "Access",
+    "rule": "Max 6 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P045",
+    "category": "Access",
+    "rule": "Max 6 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P046",
+    "category": "Access",
+    "rule": "Max 8 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P047",
+    "category": "Access",
+    "rule": "Max 4 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P048",
+    "category": "Access",
+    "rule": "Max 5 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P049",
+    "category": "Access",
+    "rule": "Max 9 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P050",
+    "category": "Access",
+    "rule": "Max 7 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P051",
+    "category": "Access",
+    "rule": "Max 7 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P052",
+    "category": "Access",
+    "rule": "Max 4 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P053",
+    "category": "Access",
+    "rule": "Max 7 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P054",
+    "category": "Access",
+    "rule": "Max 4 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P055",
+    "category": "Access",
+    "rule": "Max 8 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P056",
+    "category": "Access",
+    "rule": "Max 5 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P057",
+    "category": "Access",
+    "rule": "Max 10 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P058",
+    "category": "Access",
+    "rule": "Max 8 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P059",
+    "category": "Access",
+    "rule": "Max 7 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P060",
+    "category": "Access",
+    "rule": "Max 9 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P061",
+    "category": "Access",
+    "rule": "Max 10 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P062",
+    "category": "Access",
+    "rule": "Max 6 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P063",
+    "category": "Access",
+    "rule": "Max 7 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P064",
+    "category": "Access",
+    "rule": "Max 10 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P065",
+    "category": "Access",
+    "rule": "Max 9 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P066",
+    "category": "Access",
+    "rule": "Max 9 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P067",
+    "category": "Access",
+    "rule": "Max 4 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P068",
+    "category": "Access",
+    "rule": "Max 4 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P069",
+    "category": "Access",
+    "rule": "Max 10 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P070",
+    "category": "Access",
+    "rule": "Max 7 unique IPs per day",
+    "signal_channel": "s_logon_breadth"
+  },
+  {
+    "id": "P071",
+    "category": "Privilege",
+    "rule": "No more than 3 role changes in 8 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P072",
+    "category": "Privilege",
+    "rule": "No more than 9 role changes in 12 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P073",
+    "category": "Privilege",
+    "rule": "No more than 3 role changes in 10 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P074",
+    "category": "Privilege",
+    "rule": "No more than 8 role changes in 23 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P075",
+    "category": "Privilege",
+    "rule": "No more than 5 role changes in 14 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P076",
+    "category": "Privilege",
+    "rule": "No more than 4 role changes in 26 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P077",
+    "category": "Privilege",
+    "rule": "No more than 9 role changes in 20 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P078",
+    "category": "Privilege",
+    "rule": "No more than 7 role changes in 11 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P079",
+    "category": "Privilege",
+    "rule": "No more than 3 role changes in 17 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P080",
+    "category": "Privilege",
+    "rule": "No more than 3 role changes in 15 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P081",
+    "category": "Privilege",
+    "rule": "No more than 8 role changes in 23 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P082",
+    "category": "Privilege",
+    "rule": "No more than 4 role changes in 29 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P083",
+    "category": "Privilege",
+    "rule": "No more than 3 role changes in 18 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P084",
+    "category": "Privilege",
+    "rule": "No more than 5 role changes in 16 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P085",
+    "category": "Privilege",
+    "rule": "No more than 5 role changes in 16 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P086",
+    "category": "Privilege",
+    "rule": "No more than 7 role changes in 25 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P087",
+    "category": "Privilege",
+    "rule": "No more than 3 role changes in 9 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P088",
+    "category": "Privilege",
+    "rule": "No more than 8 role changes in 19 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P089",
+    "category": "Privilege",
+    "rule": "No more than 6 role changes in 18 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P090",
+    "category": "Privilege",
+    "rule": "No more than 9 role changes in 24 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P091",
+    "category": "Privilege",
+    "rule": "No more than 7 role changes in 12 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P092",
+    "category": "Privilege",
+    "rule": "No more than 4 role changes in 14 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P093",
+    "category": "Privilege",
+    "rule": "No more than 10 role changes in 29 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P094",
+    "category": "Privilege",
+    "rule": "No more than 6 role changes in 19 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P095",
+    "category": "Privilege",
+    "rule": "No more than 8 role changes in 26 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P096",
+    "category": "Privilege",
+    "rule": "No more than 3 role changes in 26 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P097",
+    "category": "Privilege",
+    "rule": "No more than 8 role changes in 17 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P098",
+    "category": "Privilege",
+    "rule": "No more than 8 role changes in 29 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P099",
+    "category": "Privilege",
+    "rule": "No more than 8 role changes in 27 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P100",
+    "category": "Privilege",
+    "rule": "No more than 4 role changes in 27 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P101",
+    "category": "Privilege",
+    "rule": "No more than 10 role changes in 28 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P102",
+    "category": "Privilege",
+    "rule": "No more than 8 role changes in 18 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P103",
+    "category": "Privilege",
+    "rule": "No more than 4 role changes in 10 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P104",
+    "category": "Privilege",
+    "rule": "No more than 10 role changes in 7 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P105",
+    "category": "Privilege",
+    "rule": "No more than 3 role changes in 9 days",
+    "signal_channel": "s_role_change"
+  },
+  {
+    "id": "P106",
+    "category": "Privilege",
+    "rule": "No access to Finance from Eng",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P107",
+    "category": "Privilege",
+    "rule": "No access to Finance from Contractor",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P108",
+    "category": "Privilege",
+    "rule": "No access to R&D from Contractor",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P109",
+    "category": "Privilege",
+    "rule": "No access to R&D from Contractor",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P110",
+    "category": "Privilege",
+    "rule": "No access to HR from Contractor",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P111",
+    "category": "Privilege",
+    "rule": "No access to R&D from Eng",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P112",
+    "category": "Privilege",
+    "rule": "No access to HR from Intern",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P113",
+    "category": "Privilege",
+    "rule": "No access to Finance from Contractor",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P114",
+    "category": "Privilege",
+    "rule": "No access to R&D from Contractor",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P115",
+    "category": "Privilege",
+    "rule": "No access to HR from Intern",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P116",
+    "category": "Privilege",
+    "rule": "No access to HR from Eng",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P117",
+    "category": "Privilege",
+    "rule": "No access to R&D from Contractor",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P118",
+    "category": "Privilege",
+    "rule": "No access to R&D from Contractor",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P119",
+    "category": "Privilege",
+    "rule": "No access to HR from Intern",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P120",
+    "category": "Privilege",
+    "rule": "No access to Legal from Eng",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P121",
+    "category": "Privilege",
+    "rule": "No access to Legal from Contractor",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P122",
+    "category": "Privilege",
+    "rule": "No access to R&D from Eng",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P123",
+    "category": "Privilege",
+    "rule": "No access to Legal from Intern",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P124",
+    "category": "Privilege",
+    "rule": "No access to Legal from Contractor",
+    "signal_channel": "s_context_shift"
+  },
+  {
+    "id": "P125",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 317MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P126",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 253MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P127",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 88MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P128",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 8MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P129",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 373MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P130",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 248MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P131",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 350MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P132",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 208MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P133",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 273MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P134",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 417MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P135",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 132MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P136",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 231MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P137",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 263MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P138",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 475MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P139",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 140MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P140",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 337MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P141",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 119MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P142",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 437MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P143",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 167MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P144",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 416MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P145",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 429MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P146",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 358MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P147",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 230MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P148",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 181MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P149",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 387MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P150",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 131MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P151",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 440MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P152",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 311MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P153",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 200MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P154",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 191MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P155",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 221MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P156",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 288MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P157",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 209MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P158",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 298MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P159",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 481MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P160",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 52MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P161",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 303MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P162",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 435MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P163",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 28MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P164",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 214MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P165",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 152MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P166",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 77MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P167",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 167MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P168",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 352MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P169",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 100MB",
+    "signal_channel": "s_device_vol"
+  },
+  {
+    "id": "P170",
+    "category": "Exfiltration",
+    "rule": "No attachments > 442MB to external",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P171",
+    "category": "Exfiltration",
+    "rule": "No attachments > 235MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P172",
+    "category": "Exfiltration",
+    "rule": "No attachments > 313MB to external",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P173",
+    "category": "Exfiltration",
+    "rule": "No attachments > 377MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P174",
+    "category": "Exfiltration",
+    "rule": "No attachments > 8MB to gmail.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P175",
+    "category": "Exfiltration",
+    "rule": "No attachments > 112MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P176",
+    "category": "Exfiltration",
+    "rule": "No attachments > 181MB to gmail.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P177",
+    "category": "Exfiltration",
+    "rule": "No attachments > 105MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P178",
+    "category": "Exfiltration",
+    "rule": "No attachments > 309MB to external",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P179",
+    "category": "Exfiltration",
+    "rule": "No attachments > 186MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P180",
+    "category": "Exfiltration",
+    "rule": "No attachments > 145MB to external",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P181",
+    "category": "Exfiltration",
+    "rule": "No attachments > 362MB to gmail.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P182",
+    "category": "Exfiltration",
+    "rule": "No attachments > 175MB to gmail.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P183",
+    "category": "Exfiltration",
+    "rule": "No attachments > 296MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P184",
+    "category": "Exfiltration",
+    "rule": "No attachments > 75MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P185",
+    "category": "Exfiltration",
+    "rule": "No attachments > 430MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P186",
+    "category": "Exfiltration",
+    "rule": "No attachments > 156MB to external",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P187",
+    "category": "Exfiltration",
+    "rule": "No attachments > 189MB to external",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P188",
+    "category": "Exfiltration",
+    "rule": "No attachments > 87MB to gmail.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P189",
+    "category": "Exfiltration",
+    "rule": "No attachments > 81MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P190",
+    "category": "Exfiltration",
+    "rule": "No attachments > 168MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P191",
+    "category": "Exfiltration",
+    "rule": "No attachments > 66MB to gmail.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P192",
+    "category": "Exfiltration",
+    "rule": "No attachments > 154MB to gmail.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P193",
+    "category": "Exfiltration",
+    "rule": "No attachments > 267MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P194",
+    "category": "Exfiltration",
+    "rule": "No attachments > 178MB to external",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P195",
+    "category": "Exfiltration",
+    "rule": "No attachments > 446MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P196",
+    "category": "Exfiltration",
+    "rule": "No attachments > 162MB to gmail.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P197",
+    "category": "Exfiltration",
+    "rule": "No attachments > 345MB to gmail.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P198",
+    "category": "Exfiltration",
+    "rule": "No attachments > 361MB to external",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P199",
+    "category": "Exfiltration",
+    "rule": "No attachments > 386MB to external",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P200",
+    "category": "Exfiltration",
+    "rule": "No attachments > 43MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P201",
+    "category": "Exfiltration",
+    "rule": "No attachments > 462MB to gmail.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P202",
+    "category": "Exfiltration",
+    "rule": "No attachments > 466MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P203",
+    "category": "Exfiltration",
+    "rule": "No attachments > 383MB to competitor.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P204",
+    "category": "Exfiltration",
+    "rule": "No attachments > 434MB to external",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P205",
+    "category": "Exfiltration",
+    "rule": "No attachments > 499MB to gmail.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P206",
+    "category": "Exfiltration",
+    "rule": "No attachments > 357MB to gmail.com",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P207",
+    "category": "Exfiltration",
+    "rule": "No attachments > 193MB to external",
+    "signal_channel": "s_email_vol"
+  },
+  {
+    "id": "P208",
+    "category": "Exfiltration",
+    "rule": "Block uploads to dropbox.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P209",
+    "category": "Exfiltration",
+    "rule": "Block uploads to dropbox.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P210",
+    "category": "Exfiltration",
+    "rule": "Block uploads to drive.google.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P211",
+    "category": "Exfiltration",
+    "rule": "Block uploads to mega.nz",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P212",
+    "category": "Exfiltration",
+    "rule": "Block uploads to drive.google.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P213",
+    "category": "Exfiltration",
+    "rule": "Block uploads to dropbox.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P214",
+    "category": "Exfiltration",
+    "rule": "Block uploads to mega.nz",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P215",
+    "category": "Exfiltration",
+    "rule": "Block uploads to dropbox.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P216",
+    "category": "Exfiltration",
+    "rule": "Block uploads to mega.nz",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P217",
+    "category": "Exfiltration",
+    "rule": "Block uploads to drive.google.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P218",
+    "category": "Exfiltration",
+    "rule": "Block uploads to drive.google.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P219",
+    "category": "Exfiltration",
+    "rule": "Block uploads to dropbox.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P220",
+    "category": "Exfiltration",
+    "rule": "Block uploads to mega.nz",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P221",
+    "category": "Exfiltration",
+    "rule": "Block uploads to mega.nz",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P222",
+    "category": "Exfiltration",
+    "rule": "Block uploads to drive.google.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P223",
+    "category": "Exfiltration",
+    "rule": "Block uploads to mega.nz",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P224",
+    "category": "Exfiltration",
+    "rule": "Block uploads to mega.nz",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P225",
+    "category": "Exfiltration",
+    "rule": "Block uploads to mega.nz",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P226",
+    "category": "Exfiltration",
+    "rule": "Block uploads to drive.google.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P227",
+    "category": "Exfiltration",
+    "rule": "Block uploads to mega.nz",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P228",
+    "category": "Exfiltration",
+    "rule": "Block uploads to dropbox.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P229",
+    "category": "Exfiltration",
+    "rule": "Block uploads to drive.google.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P230",
+    "category": "Exfiltration",
+    "rule": "Block uploads to drive.google.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P231",
+    "category": "Exfiltration",
+    "rule": "Block uploads to mega.nz",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P232",
+    "category": "Exfiltration",
+    "rule": "Block uploads to drive.google.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P233",
+    "category": "Exfiltration",
+    "rule": "Block uploads to mega.nz",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P234",
+    "category": "Exfiltration",
+    "rule": "Block uploads to drive.google.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P235",
+    "category": "Exfiltration",
+    "rule": "Block uploads to dropbox.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P236",
+    "category": "Exfiltration",
+    "rule": "Block uploads to drive.google.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P237",
+    "category": "Exfiltration",
+    "rule": "Block uploads to drive.google.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P238",
+    "category": "Exfiltration",
+    "rule": "Block uploads to drive.google.com",
+    "signal_channel": "s_http_exfil"
+  },
+  {
+    "id": "P239",
+    "category": "Recon",
+    "rule": "Alert on read access to /etc/shadow",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P240",
+    "category": "Recon",
+    "rule": "Alert on read access to id_rsa",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P241",
+    "category": "Recon",
+    "rule": "Alert on read access to database.conf",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P242",
+    "category": "Recon",
+    "rule": "Alert on read access to database.conf",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P243",
+    "category": "Recon",
+    "rule": "Alert on read access to /etc/shadow",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P244",
+    "category": "Recon",
+    "rule": "Alert on read access to database.conf",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P245",
+    "category": "Recon",
+    "rule": "Alert on read access to database.conf",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P246",
+    "category": "Recon",
+    "rule": "Alert on read access to database.conf",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P247",
+    "category": "Recon",
+    "rule": "Alert on read access to /etc/shadow",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P248",
+    "category": "Recon",
+    "rule": "Alert on read access to /etc/shadow",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P249",
+    "category": "Recon",
+    "rule": "Alert on read access to /etc/shadow",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P250",
+    "category": "Recon",
+    "rule": "Alert on read access to database.conf",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P251",
+    "category": "Recon",
+    "rule": "Alert on read access to id_rsa",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P252",
+    "category": "Recon",
+    "rule": "Alert on read access to /etc/shadow",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P253",
+    "category": "Recon",
+    "rule": "Alert on read access to database.conf",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P254",
+    "category": "Recon",
+    "rule": "Alert on read access to /etc/shadow",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P255",
+    "category": "Recon",
+    "rule": "Alert on read access to id_rsa",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P256",
+    "category": "Recon",
+    "rule": "Alert on read access to id_rsa",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P257",
+    "category": "Recon",
+    "rule": "Alert on read access to database.conf",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P258",
+    "category": "Recon",
+    "rule": "Alert on read access to id_rsa",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P259",
+    "category": "Recon",
+    "rule": "Alert on read access to id_rsa",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P260",
+    "category": "Recon",
+    "rule": "Alert on read access to id_rsa",
+    "signal_channel": "s_file_sensitive"
+  },
+  {
+    "id": "P261",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.3.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P262",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.35.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P263",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.1.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P264",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.47.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P265",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.16.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P266",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.43.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P267",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.38.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P268",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.14.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P269",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.45.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P270",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.44.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P271",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.47.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P272",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.2.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P273",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.38.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P274",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.19.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P275",
+    "category": "Recon",
+    "rule": "No scanning of subnet 192.168.7.0/24",
+    "signal_channel": "s_net_scan"
+  },
+  {
+    "id": "P276",
+    "category": "Lifecycle",
+    "rule": "Revoke access 32h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P277",
+    "category": "Lifecycle",
+    "rule": "Revoke access 8h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P278",
+    "category": "Lifecycle",
+    "rule": "Revoke access 35h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P279",
+    "category": "Lifecycle",
+    "rule": "Revoke access 43h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P280",
+    "category": "Lifecycle",
+    "rule": "Revoke access 35h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P281",
+    "category": "Lifecycle",
+    "rule": "Revoke access 41h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P282",
+    "category": "Lifecycle",
+    "rule": "Revoke access 23h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P283",
+    "category": "Lifecycle",
+    "rule": "Revoke access 3h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P284",
+    "category": "Lifecycle",
+    "rule": "Revoke access 9h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P285",
+    "category": "Lifecycle",
+    "rule": "Revoke access 47h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P286",
+    "category": "Lifecycle",
+    "rule": "Revoke access 46h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P287",
+    "category": "Lifecycle",
+    "rule": "Revoke access 7h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P288",
+    "category": "Lifecycle",
+    "rule": "Revoke access 0h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P289",
+    "category": "Lifecycle",
+    "rule": "Revoke access 20h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P290",
+    "category": "Lifecycle",
+    "rule": "Revoke access 20h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P291",
+    "category": "Lifecycle",
+    "rule": "Revoke access 18h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P292",
+    "category": "Lifecycle",
+    "rule": "Revoke access 10h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P293",
+    "category": "Lifecycle",
+    "rule": "Revoke access 3h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P294",
+    "category": "Lifecycle",
+    "rule": "Revoke access 45h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P295",
+    "category": "Lifecycle",
+    "rule": "Revoke access 33h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P296",
+    "category": "Lifecycle",
+    "rule": "Revoke access 24h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P297",
+    "category": "Lifecycle",
+    "rule": "Revoke access 48h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P298",
+    "category": "Lifecycle",
+    "rule": "Revoke access 37h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P299",
+    "category": "Lifecycle",
+    "rule": "Revoke access 18h after termination",
+    "signal_channel": "s_term_access"
+  },
+  {
+    "id": "P300",
+    "category": "Lifecycle",
+    "rule": "Revoke access 28h after termination",
+    "signal_channel": "s_term_access"
+  }
+]

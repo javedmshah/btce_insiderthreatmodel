@@ -1,0 +1,371 @@
+[
+  {
+    "id": "P1.1",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login between 22:00 and 06:00 without multi-factor approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.7,
+    "rationale": "Detects reconnaissance outside business hours"
+  },
+  {
+    "id": "P1.2",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Alert if user logs in from 5+ different time zones in 7 days",
+    "signal_channel": "s_logon_time",
+    "severity": 0.8,
+    "rationale": "Detects VPN/proxy hopping to mask location"
+  },
+  {
+    "id": "P1.3",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No logins during declared vacation periods",
+    "signal_channel": "s_logon_time",
+    "severity": 0.9,
+    "rationale": "High fidelity: clear violation of calendar intent"
+  },
+  {
+    "id": "P1.4",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login acceleration: reject if 3+ logins in < 5 minutes from same user",
+    "signal_channel": "s_logon_time",
+    "severity": 0.75,
+    "rationale": "Detects credential testing or brute-force patterns"
+  },
+
+  {
+    "id": "P2.1",
+    "group": "Workstation Breadth Restrictions",
+    "category": "Access",
+    "rule": "No access from > 3 unique devices in a day for non-admin roles",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.6,
+    "rationale": "Baseline anomaly detection"
+  },
+  {
+    "id": "P2.2",
+    "group": "Workstation Breadth Restrictions",
+    "category": "Access",
+    "rule": "No access from unregistered/unknown devices without IT approval",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.85,
+    "rationale": "High fidelity: unknown device = clear violation"
+  },
+  {
+    "id": "P2.3",
+    "group": "Workstation Breadth Restrictions",
+    "category": "Access",
+    "rule": "Alert if user accesses > 5 admin workstations in a day",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.9,
+    "rationale": "Admin sprawl is a strong insider indicator"
+  },
+  {
+    "id": "P2.4",
+    "group": "Workstation Breadth Restrictions",
+    "category": "Access",
+    "rule": "No access from geographically impossible locations (e.g., US then EU in 1h)",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.95,
+    "rationale": "Highest fidelity: physically impossible"
+  },
+
+  {
+    "id": "P3.1",
+    "group": "Role Change Velocity",
+    "category": "Privilege",
+    "rule": "No role additions without manager + compliance sign-off",
+    "signal_channel": "s_role_change",
+    "severity": 0.75,
+    "rationale": "Requires multi-party approval"
+  },
+  {
+    "id": "P3.2",
+    "group": "Role Change Velocity",
+    "category": "Privilege",
+    "rule": "Alert if user adds > 3 roles in 7 days",
+    "signal_channel": "s_role_change",
+    "severity": 0.8,
+    "rationale": "Rapid accumulation is suspicious"
+  },
+  {
+    "id": "P3.3",
+    "group": "Role Change Velocity",
+    "category": "Privilege",
+    "rule": "No self-service role requests; all must be approved by role owner",
+    "signal_channel": "s_role_change",
+    "severity": 0.7,
+    "rationale": "Prevents privilege inflation"
+  },
+  {
+    "id": "P3.4",
+    "group": "Role Change Velocity",
+    "category": "Privilege",
+    "rule": "No role changes in the 48h immediately after disciplinary action or resignation notice",
+    "signal_channel": "s_role_change",
+    "severity": 0.95,
+    "rationale": "High fidelity: temporal correlation with intent"
+  },
+
+  {
+    "id": "P4.1",
+    "group": "Cross-Department Access",
+    "category": "Privilege",
+    "rule": "Engineering role cannot access Finance folder without documented business case",
+    "signal_channel": "s_context_shift",
+    "severity": 0.8,
+    "rationale": "Cross-domain access requires justification"
+  },
+  {
+    "id": "P4.2",
+    "group": "Cross-Department Access",
+    "category": "Privilege",
+    "rule": "No access to HR systems from non-HR roles",
+    "signal_channel": "s_context_shift",
+    "severity": 0.9,
+    "rationale": "HR is high-sensitivity; access is role-scoped"
+  },
+  {
+    "id": "P4.3",
+    "group": "Cross-Department Access",
+    "category": "Privilege",
+    "rule": "Alert if user accesses folder from role scope not matching job title",
+    "signal_channel": "s_context_shift",
+    "severity": 0.85,
+    "rationale": "RBAC mismatch indicates potential lateral movement"
+  },
+  {
+    "id": "P4.4",
+    "group": "Cross-Department Access",
+    "category": "Privilege",
+    "rule": "No cross-project access without explicit cross-project role",
+    "signal_channel": "s_context_shift",
+    "severity": 0.75,
+    "rationale": "Enforces project isolation"
+  },
+
+  {
+    "id": "P5.1",
+    "group": "USB Exfiltration Prevention",
+    "category": "Exfiltration",
+    "rule": "No USB writes > 100MB in a single operation",
+    "signal_channel": "s_device_vol",
+    "severity": 0.85,
+    "rationale": "Caps data per transfer"
+  },
+  {
+    "id": "P5.2",
+    "group": "USB Exfiltration Prevention",
+    "category": "Exfiltration",
+    "rule": "No USB writes of files tagged 'Confidential' or 'Internal-Only'",
+    "signal_channel": "s_device_vol",
+    "severity": 0.95,
+    "rationale": "Highest fidelity: explicit DLP classification"
+  },
+  {
+    "id": "P5.3",
+    "group": "USB Exfiltration Prevention",
+    "category": "Exfiltration",
+    "rule": "No USB writes from unencrypted devices",
+    "signal_channel": "s_device_vol",
+    "severity": 0.9,
+    "rationale": "Forces use of approved/encrypted USB"
+  },
+  {
+    "id": "P5.4",
+    "group": "USB Exfiltration Prevention",
+    "category": "Exfiltration",
+    "rule": "Alert if user writes > 500MB to USB in a single day (sum of all operations)",
+    "signal_channel": "s_device_vol",
+    "severity": 0.8,
+    "rationale": "Daily volume threshold"
+  },
+
+  {
+    "id": "P6.1",
+    "group": "Email Exfiltration Prevention",
+    "category": "Exfiltration",
+    "rule": "No attachments > 10MB to external email addresses",
+    "signal_channel": "s_email_vol",
+    "severity": 0.8,
+    "rationale": "Caps single-mail exfil"
+  },
+  {
+    "id": "P6.2",
+    "group": "Email Exfiltration Prevention",
+    "category": "Exfiltration",
+    "rule": "Block emails to personal email domains (gmail.com, yahoo.com, etc.) if subject contains 'Confidential' or 'Secret'",
+    "signal_channel": "s_email_vol",
+    "severity": 0.95,
+    "rationale": "Highest fidelity: keyword + domain match"
+  },
+  {
+    "id": "P6.3",
+    "group": "Email Exfiltration Prevention",
+    "category": "Exfiltration",
+    "rule": "Alert if user sends > 5 emails with attachments to external domains in 1 hour",
+    "signal_channel": "s_email_vol",
+    "severity": 0.85,
+    "rationale": "Detects bulk email exfil attempt"
+  },
+  {
+    "id": "P6.4",
+    "group": "Email Exfiltration Prevention",
+    "category": "Exfiltration",
+    "rule": "No BCC use in emails to external domains",
+    "signal_channel": "s_email_vol",
+    "severity": 0.9,
+    "rationale": "BCC is high-risk for hiding recipients"
+  },
+
+  {
+    "id": "P7.1",
+    "group": "Cloud Exfiltration Prevention",
+    "category": "Exfiltration",
+    "rule": "Block uploads to known file-sharing services (Dropbox, OneDrive, Google Drive, Mega)",
+    "signal_channel": "s_http_exfil",
+    "severity": 0.95,
+    "rationale": "Explicit blocklist; high fidelity"
+  },
+  {
+    "id": "P7.2",
+    "group": "Cloud Exfiltration Prevention",
+    "category": "Exfiltration",
+    "rule": "No uploads to personal cloud accounts from corporate network",
+    "signal_channel": "s_http_exfil",
+    "severity": 0.9,
+    "rationale": "Personal account use is suspicious"
+  },
+  {
+    "id": "P7.3",
+    "group": "Cloud Exfiltration Prevention",
+    "category": "Exfiltration",
+    "rule": "Alert if user accesses known data paste sites (Pastebin, GitHub Gist) with authenticated credentials",
+    "signal_channel": "s_http_exfil",
+    "severity": 0.9,
+    "rationale": "Paste sites = exfil infrastructure"
+  },
+  {
+    "id": "P7.4",
+    "group": "Cloud Exfiltration Prevention",
+    "category": "Exfiltration",
+    "rule": "No more than 50MB uploaded to any cloud service per day",
+    "signal_channel": "s_http_exfil",
+    "severity": 0.8,
+    "rationale": "Daily volume cap"
+  },
+
+  {
+    "id": "P8.1",
+    "group": "Sensitive File Access Control",
+    "category": "Reconnaissance",
+    "rule": "No read access to /etc/shadow, /etc/passwd, or SSH keys without ticket",
+    "signal_channel": "s_file_sensitive",
+    "severity": 0.95,
+    "rationale": "Highest fidelity: attempting to read system secrets"
+  },
+  {
+    "id": "P8.2",
+    "group": "Sensitive File Access Control",
+    "category": "Reconnaissance",
+    "rule": "Alert if user accesses database config files (db.conf, secrets.yaml, .env)",
+    "signal_channel": "s_file_sensitive",
+    "severity": 0.9,
+    "rationale": "Config files = credential mining"
+  },
+  {
+    "id": "P8.3",
+    "group": "Sensitive File Access Control",
+    "category": "Reconnaissance",
+    "rule": "No access to backup/archive folders from non-backup roles",
+    "signal_channel": "s_file_sensitive",
+    "severity": 0.85,
+    "rationale": "Backups contain full datasets"
+  },
+  {
+    "id": "P8.4",
+    "group": "Sensitive File Access Control",
+    "category": "Reconnaissance",
+    "rule": "Log and alert on any access to files outside user's normal data scope (calculated from baseline)",
+    "signal_channel": "s_file_sensitive",
+    "severity": 0.8,
+    "rationale": "Anomaly-based: user is accessing new domains"
+  },
+
+  {
+    "id": "P9.1",
+    "group": "Network Reconnaissance Prevention",
+    "category": "Reconnaissance",
+    "rule": "Block outbound network scanning (nmap, masscan, Shodan API) from corporate network",
+    "signal_channel": "s_net_scan",
+    "severity": 0.95,
+    "rationale": "Highest fidelity: explicit tool/pattern detection"
+  },
+  {
+    "id": "P9.2",
+    "group": "Network Reconnaissance Prevention",
+    "category": "Reconnaissance",
+    "rule": "Alert on unusual DNS queries (e.g., reverse DNS, zone transfers) from non-DNS roles",
+    "signal_channel": "s_net_scan",
+    "severity": 0.9,
+    "rationale": "DNS enumeration is recon"
+  },
+  {
+    "id": "P9.3",
+    "group": "Network Reconnaissance Prevention",
+    "category": "Reconnaissance",
+    "rule": "No port enumeration or service probing from user endpoints",
+    "signal_channel": "s_net_scan",
+    "severity": 0.9,
+    "rationale": "Port scanning = network mapping"
+  },
+  {
+    "id": "P9.4",
+    "group": "Network Reconnaissance Prevention",
+    "category": "Reconnaissance",
+    "rule": "Alert if user connects to > 50 new IP addresses in a day",
+    "signal_channel": "s_net_scan",
+    "severity": 0.8,
+    "rationale": "Connection sprawl indicates systematic scanning"
+  },
+
+  {
+    "id": "P10.1",
+    "group": "Post-Termination Access Control",
+    "category": "Lifecycle",
+    "rule": "Immediate (0h) account lockout upon termination signal",
+    "signal_channel": "s_term_access",
+    "severity": 1.0,
+    "rationale": "Highest fidelity: binary state"
+  },
+  {
+    "id": "P10.2",
+    "group": "Post-Termination Access Control",
+    "category": "Lifecycle",
+    "rule": "Alert on access attempts from revoked account within 24h of lockout",
+    "signal_channel": "s_term_access",
+    "severity": 0.95,
+    "rationale": "Possible credential re-use attack"
+  },
+  {
+    "id": "P10.3",
+    "group": "Post-Termination Access Control",
+    "category": "Lifecycle",
+    "rule": "No shared/service account access from known-terminated user's IP",
+    "signal_channel": "s_term_access",
+    "severity": 0.9,
+    "rationale": "IP re-use after termination is suspicious"
+  },
+  {
+    "id": "P10.4",
+    "group": "Post-Termination Access Control",
+    "category": "Lifecycle",
+    "rule": "Mandatory MFA re-validation 48h before termination; disable if not completed",
+    "signal_channel": "s_term_access",
+    "severity": 0.85,
+    "rationale": "Prevents sneaking in backdoors before exit"
+  }
+]

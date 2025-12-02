@@ -1,0 +1,2702 @@
+[
+  {
+    "id": "P1.1",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login between 22:00 and 06:00 without multi-factor approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.7,
+    "rationale": "Detects reconnaissance outside business hours"
+  },
+  {
+    "id": "P1.2",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No more than 2 consecutive after-hours logins within 7 days",
+    "signal_channel": "s_logon_time",
+    "severity": 0.6,
+    "rationale": "Detects persistent off-hours activity patterns"
+  },
+  {
+    "id": "P1.3",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "No access to more than 5 unique workstations per day without department head approval",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.8,
+    "rationale": "Detects horizontal movement and reconnaissance"
+  },
+  {
+    "id": "P1.4",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "No cross-department workstation access without business justification",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.75,
+    "rationale": "Detects privilege boundary testing"
+  },
+  {
+    "id": "P2.1",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "All role changes require manager approval and security review",
+    "signal_channel": "s_role_change",
+    "severity": 0.85,
+    "rationale": "Detects privilege escalation attempts"
+  },
+  {
+    "id": "P2.2",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "No more than 2 role changes per quarter without CISO approval",
+    "signal_channel": "s_role_change",
+    "severity": 0.8,
+    "rationale": "Detects rapid privilege accumulation"
+  },
+  {
+    "id": "P2.3",
+    "group": "Sensitive Role Access",
+    "category": "Privilege",
+    "rule": "Access to financial systems requires additional background check",
+    "signal_channel": "s_role_sensitivity",
+    "severity": 0.9,
+    "rationale": "Protects high-value financial data"
+  },
+  {
+    "id": "P3.1",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "No USB storage devices allowed without encryption and registration",
+    "signal_channel": "s_device_vol",
+    "severity": 0.95,
+    "rationale": "Prevents unencrypted data transfer"
+  },
+  {
+    "id": "P3.2",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "No file transfers >100MB to removable media without approval",
+    "signal_channel": "s_device_vol",
+    "severity": 0.85,
+    "rationale": "Detects large-scale data exfiltration"
+  },
+  {
+    "id": "P3.3",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "No email attachments >5MB to external domains without DLP scan",
+    "signal_channel": "s_email_vol",
+    "severity": 0.8,
+    "rationale": "Detects data exfiltration via email"
+  },
+  {
+    "id": "P3.4",
+    "group": "Cloud Upload Restrictions",
+    "category": "Exfiltration",
+    "rule": "No uploads to personal cloud storage services (Dropbox, Google Drive, etc.)",
+    "signal_channel": "s_http_exfil",
+    "severity": 0.9,
+    "rationale": "Prevents data leakage to unauthorized cloud services"
+  },
+  {
+    "id": "P4.1",
+    "group": "Sensitive File Access",
+    "category": "Reconnaissance",
+    "rule": "No access to /etc/shadow, SAM databases, or password files",
+    "signal_channel": "s_file_sensitive",
+    "severity": 0.96,
+    "rationale": "Prevents credential harvesting attempts"
+  },
+  {
+    "id": "P4.2",
+    "group": "Network Scanning Detection",
+    "category": "Reconnaissance",
+    "rule": "Port scanning and network enumeration activities are prohibited",
+    "signal_channel": "s_net_scan",
+    "severity": 0.94,
+    "rationale": "Detects network reconnaissance and mapping"
+  },
+  {
+    "id": "P4.3",
+    "group": "Database Query Monitoring",
+    "category": "Reconnaissance",
+    "rule": "Unusual database query patterns trigger immediate review",
+    "signal_channel": "s_db_query",
+    "severity": 0.82,
+    "rationale": "Detects data mining and reconnaissance"
+  },
+  {
+    "id": "P5.1",
+    "group": "Job Search Monitoring",
+    "category": "Workflow",
+    "rule": "Excessive access to job search sites during work hours triggers review",
+    "signal_channel": "s_http_intent",
+    "severity": 0.6,
+    "rationale": "Detects potential departure intent"
+  },
+  {
+    "id": "P5.2",
+    "group": "Browsing Pattern Analysis",
+    "category": "Workflow",
+    "rule": "Significant changes in browsing entropy require behavior analysis",
+    "signal_channel": "s_browsing_entropy",
+    "severity": 0.55,
+    "rationale": "Detects reconnaissance and research activities"
+  },
+  {
+    "id": "P6.1",
+    "group": "Behavioral Baseline Monitoring",
+    "category": "Anomaly",
+    "rule": "Significant deviations from established behavioral baselines require investigation",
+    "signal_channel": "s_behavior_anomaly",
+    "severity": 0.75,
+    "rationale": "Detects subtle behavioral changes indicating risk"
+  },
+  {
+    "id": "P6.2",
+    "group": "Velocity-Based Detection",
+    "category": "Anomaly",
+    "rule": "Rapid acceleration in privilege changes or data access triggers review",
+    "signal_channel": "s_velocity_anomaly",
+    "severity": 0.8,
+    "rationale": "Detects preparation phases of insider attacks"
+  },
+  {
+    "id": "P7.1",
+    "group": "Termination Procedures",
+    "category": "Lifecycle",
+    "rule": "All access must be revoked within 24 hours of termination notification",
+    "signal_channel": "s_term_access",
+    "severity": 0.95,
+    "rationale": "Prevents post-termination access and retaliation"
+  },
+  {
+    "id": "P7.2",
+    "group": "Access Review Cycles",
+    "category": "Lifecycle",
+    "rule": "All user access must be reviewed semi-annually by data owners",
+    "signal_channel": "s_access_review",
+    "severity": 0.75,
+    "rationale": "Maintains principle of least privilege"
+  },
+  {
+    "id": "P021",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.67,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P023",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.72,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P025",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 4 within 19 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.66,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P027",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.53,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P029",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.68,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P031",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 8 within 43 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.5,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P033",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.76,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P035",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.77,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P037",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.82,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P039",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.82,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P041",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 20 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.73,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P043",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.83,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P045",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.75,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P047",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.69,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P049",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.7,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P051",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.79,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P053",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.77,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P055",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.74,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P057",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.73,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P059",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "External device registration required before first use",
+    "signal_channel": "s_device_vol",
+    "severity": 0.91,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P061",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.8,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P063",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.75,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P065",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.72,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P067",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Access from more than 7 different networks in 7 hours requires review",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.9,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P069",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.8,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P071",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.88,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P073",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 6 within 45 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.57,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P075",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.69,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P077",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Access from more than 10 different networks in 45 hours requires review",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.7,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P079",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 31 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.75,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P081",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Access from more than 3 different networks in 18 hours requires review",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.79,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P083",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.88,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P085",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.8,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P087",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.85,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P089",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "External device registration required before first use",
+    "signal_channel": "s_device_vol",
+    "severity": 0.93,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P091",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.78,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P093",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.71,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P095",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.79,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P097",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.87,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P099",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.89,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P101",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 38 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.9,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P103",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.87,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P105",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.84,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P107",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.71,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P109",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Role inheritance across projects requires security assessment",
+    "signal_channel": "s_role_change",
+    "severity": 0.91,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P111",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "External device registration required before first use",
+    "signal_channel": "s_device_vol",
+    "severity": 0.82,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P113",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 10 within 23 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.78,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P115",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.54,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P117",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.64,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P119",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.84,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P121",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.69,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P123",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.93,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P125",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.67,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P127",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.75,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P129",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 36 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.83,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P131",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 7 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.71,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P133",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 10 within 34 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.79,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P135",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.86,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P137",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.79,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P139",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.59,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P141",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Access from more than 5 different networks in 44 hours requires review",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.71,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P143",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.72,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P145",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Role inheritance across projects requires security assessment",
+    "signal_channel": "s_role_change",
+    "severity": 0.7,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P147",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 5 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.93,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P149",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 30 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.82,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P151",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 25 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.74,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P153",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Access from more than 8 different networks in 44 hours requires review",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.69,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P155",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.75,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P157",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Access from more than 10 different networks in 9 hours requires review",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.74,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P159",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.75,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P161",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Role inheritance across projects requires security assessment",
+    "signal_channel": "s_role_change",
+    "severity": 0.89,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P163",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.83,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P165",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.76,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P167",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.75,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P169",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.78,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P171",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.78,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P173",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 17 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.89,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P175",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 36 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.79,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P177",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.51,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P179",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Access from more than 8 different networks in 43 hours requires review",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.86,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P181",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "External device registration required before first use",
+    "signal_channel": "s_device_vol",
+    "severity": 0.92,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P183",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.82,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P185",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.77,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P187",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "External device registration required before first use",
+    "signal_channel": "s_device_vol",
+    "severity": 0.81,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P189",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 4 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.85,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P191",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Role inheritance across projects requires security assessment",
+    "signal_channel": "s_role_change",
+    "severity": 0.89,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P193",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.79,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P195",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.74,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P197",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.84,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P199",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.67,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P201",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.74,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P203",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.92,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P205",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 1 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.79,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P207",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.71,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P209",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.77,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P211",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 35 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.88,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P213",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.61,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P215",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.85,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P217",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Role inheritance across projects requires security assessment",
+    "signal_channel": "s_role_change",
+    "severity": 0.71,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P219",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.8,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P221",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 10 within 30 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.66,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P223",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.66,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P225",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.87,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P227",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.97,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P229",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.8,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P231",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 22 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.7,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P233",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.77,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P235",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.75,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P237",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.78,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P239",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 6 within 21 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.6,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P241",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.77,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P243",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Role inheritance across projects requires security assessment",
+    "signal_channel": "s_role_change",
+    "severity": 0.76,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P245",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "External device registration required before first use",
+    "signal_channel": "s_device_vol",
+    "severity": 0.84,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P247",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.97,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P249",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.88,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P251",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.67,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P253",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 19 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.75,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P255",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 9 within 21 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.61,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P257",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.58,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P259",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.6,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P261",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.75,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P263",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.56,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P265",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.65,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P267",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 21 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.71,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P269",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 5 within 27 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.52,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P271",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 5 within 46 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.62,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P273",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.81,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P275",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 26 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.7,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P277",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.81,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P279",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 14 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.81,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P281",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.86,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P283",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.78,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P285",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.7,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P287",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "External device registration required before first use",
+    "signal_channel": "s_device_vol",
+    "severity": 0.81,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P289",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.87,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P291",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.84,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P293",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.84,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P295",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.86,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P297",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.89,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P299",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 3 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.83,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P301",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.77,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P303",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 29 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.81,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P305",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.79,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P307",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.72,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P309",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 13 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.86,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P311",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.83,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P313",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.83,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P315",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.79,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P317",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.71,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P319",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.83,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P321",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "External device registration required before first use",
+    "signal_channel": "s_device_vol",
+    "severity": 0.84,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P323",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.74,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P325",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.77,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P327",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.97,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P329",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.84,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P331",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.64,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P333",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 13 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.85,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P335",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.66,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P337",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.58,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P339",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.79,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P341",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.93,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P343",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.6,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P345",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.78,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P347",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 4 within 47 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.58,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P349",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.89,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P351",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 11 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.81,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P353",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.88,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P355",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.56,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P357",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.85,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P359",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 3 within 29 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.75,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P361",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.68,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P363",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 30 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.93,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P365",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 19 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.77,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P367",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.9,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P369",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.82,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P371",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.73,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P373",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.82,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P375",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.8,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P377",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.77,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P379",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.86,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P381",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 4 within 50 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.72,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P383",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.83,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P385",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.57,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P387",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.82,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P389",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 9 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.92,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P391",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.85,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P393",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.69,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P395",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Role inheritance across projects requires security assessment",
+    "signal_channel": "s_role_change",
+    "severity": 0.82,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P397",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.93,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P399",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.83,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P401",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.87,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P403",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.87,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P405",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.68,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P407",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.79,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P409",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.79,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P411",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.89,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P413",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "External device registration required before first use",
+    "signal_channel": "s_device_vol",
+    "severity": 0.91,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P415",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.67,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P417",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.56,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P419",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.52,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P421",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 8 within 28 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.68,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P423",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.71,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P425",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.71,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P427",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 2 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.85,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P429",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 14 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.74,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P431",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 14 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.84,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P433",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.78,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P435",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.66,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P437",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.72,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P439",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.85,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P441",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 11 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.71,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P443",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 31 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.85,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P445",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.6,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P447",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 9 within 60 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.61,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P449",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.66,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P451",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 28 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.71,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P453",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.97,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P455",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.73,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P457",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 9 within 15 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.62,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P459",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.89,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P461",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 18 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.82,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P463",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.74,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P465",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.81,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P467",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 7 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.93,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P469",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.89,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P471",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 17 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.84,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P473",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.86,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P475",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.72,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P477",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.9,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P479",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.81,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P481",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Access from more than 5 different networks in 24 hours requires review",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.73,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P483",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.73,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P485",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.87,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P487",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.82,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P489",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.95,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P491",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.73,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P493",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.73,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P495",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.9,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P497",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 9 within 25 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.66,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P499",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.82,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P501",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.93,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P503",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.89,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P505",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 25 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.86,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P507",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.82,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P509",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 20 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.84,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P511",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.86,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P513",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Temporary role assignments expire after 3 days without extension",
+    "signal_channel": "s_role_change",
+    "severity": 0.82,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P515",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Role inheritance across projects requires security assessment",
+    "signal_channel": "s_role_change",
+    "severity": 0.83,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P517",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Access from more than 6 different networks in 16 hours requires review",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.62,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P519",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.5,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P521",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Login from new geographic region requires additional verification",
+    "signal_channel": "s_logon_time",
+    "severity": 0.63,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P523",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.9,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P525",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 13 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.72,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P527",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.6,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P529",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "No login during company holidays without VP approval",
+    "signal_channel": "s_logon_time",
+    "severity": 0.57,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P531",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.85,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P533",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Emergency role grants must be reviewed within 41 hours",
+    "signal_channel": "s_role_change",
+    "severity": 0.84,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P535",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.74,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P537",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.73,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P539",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Access from more than 7 different networks in 46 hours requires review",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.69,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P541",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Access from more than 3 different networks in 8 hours requires review",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.69,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P543",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.96,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P545",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Access from more than 7 different networks in 7 hours requires review",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.75,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P547",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.65,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P549",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Access from more than 4 different networks in 6 hours requires review",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.68,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P551",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Bulk email to external domains triggers DLP review",
+    "signal_channel": "s_email_vol",
+    "severity": 0.88,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P553",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.91,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P555",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "Email forwarding to personal accounts prohibited",
+    "signal_channel": "s_email_vol",
+    "severity": 0.78,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P557",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.94,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P559",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.72,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P561",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.71,
+    "rationale": "Ensures compliance with data protection regulations"
+  },
+  {
+    "id": "P563",
+    "group": "Logon Time Restrictions",
+    "category": "Access",
+    "rule": "Consecutive failed logins > 5 within 15 minutes triggers account lock",
+    "signal_channel": "s_logon_time",
+    "severity": 0.8,
+    "rationale": "Protects sensitive organizational assets"
+  },
+  {
+    "id": "P565",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.83,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P567",
+    "group": "Role Change Monitoring",
+    "category": "Privilege",
+    "rule": "Role inheritance across projects requires security assessment",
+    "signal_channel": "s_role_change",
+    "severity": 0.76,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P569",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Data transfer to unregistered devices blocked automatically",
+    "signal_channel": "s_device_vol",
+    "severity": 0.96,
+    "rationale": "Maintains audit trail for security incidents"
+  },
+  {
+    "id": "P571",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.88,
+    "rationale": "Prevents unauthorized access attempts"
+  },
+  {
+    "id": "P573",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "VPN access patterns must match physical location history",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.79,
+    "rationale": "Monitors for insider threat indicators"
+  },
+  {
+    "id": "P575",
+    "group": "USB Device Controls",
+    "category": "Exfiltration",
+    "rule": "Encrypted device usage logs mandatory for compliance",
+    "signal_channel": "s_device_vol",
+    "severity": 0.83,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P577",
+    "group": "Workstation Access Patterns",
+    "category": "Access",
+    "rule": "Concurrent sessions from multiple locations prohibited",
+    "signal_channel": "s_logon_breadth",
+    "severity": 0.62,
+    "rationale": "Detects potential security policy violations"
+  },
+  {
+    "id": "P579",
+    "group": "Email Transfer Limits",
+    "category": "Exfiltration",
+    "rule": "External email with attachments requires keyword scanning",
+    "signal_channel": "s_email_vol",
+    "severity": 0.82,
+    "rationale": "Monitors for insider threat indicators"
+  }
+]
