@@ -1,0 +1,485 @@
+============================================================
+RUNNING HYBRID SIMULATION
+============================================================
+
+############################################################
+DEBUG: STARTING SIMULATION
+Tracking User 0 (Malicious) and User 99 (Loyal)
+Total users: 100, Malicious users: 15
+############################################################
+
+
+========================================
+DEBUG: User 0 Journey Begin
+User Type: MALICIOUS
+Initial Beliefs: {<UserType.LOYAL: 0>: 0.9, <UserType.DISGRUNTLED: 1>: 0.09, <UserType.MALICIOUS: 2>: 0.01}
+========================================
+
+
+============================================================
+DEBUG: User 0 (MALICIOUS) Signal Generation Start
+Initial signal values: ['0.053', '0.231', '0.172', '0.093', '0.124', '0.225', '0.207', '0.151', '0.226', '0.073']
+User type: LOYAL
+============================================================
+
+
+DEBUG t=  0: User   0 (MAL)
+  Type: LOYAL        | Action: NORMAL    
+  Signals max: 0.231 | Threat score: 0.155
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.017
+  Risk: 0.100 | Detection status: normal
+
+DEBUG t= 10: User   0 (MAL)
+  Type: LOYAL        | Action: NORMAL    
+  Signals max: 0.403 | Threat score: 0.198
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.018
+  Risk: 0.126 | Detection status: normal
+
+DEBUG t= 20: User   0 (MAL)
+  Type: LOYAL        | Action: NORMAL    
+  Signals max: 0.313 | Threat score: 0.167
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.028
+  Risk: 0.111 | Detection status: normal
+
+DEBUG: User 0 transitioned to DISGRUNTLED at t=21
+
+DEBUG t= 30: User   0 (MAL)
+  Type: DISGRUNTLED  | Action: NORMAL    
+  Signals max: 0.245 | Threat score: 0.120
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.020
+  Risk: 0.080 | Detection status: normal
+
+DEBUG: User 0 transitioned to MALICIOUS at t=31
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+DEBUG: User 0 DETECTED as MALICIOUS at t=36
+Risk: 1.130 > Threshold: 0.88
+Detection status: SUSPEND
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+DEBUG t= 37: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.888 | Threat score: 1.520
+  Beliefs - Anchor: 1.000 | Traitor: 0.050 | System: 0.968
+  Risk: 1.299 | Detection status: SUSPEND
+
+DEBUG t= 38: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.886 | Threat score: 1.203
+  Beliefs - Anchor: 0.235 | Traitor: 0.050 | System: 0.203
+  Risk: 0.803 | Detection status: FLAG
+
+DEBUG t= 39: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.858 | Threat score: 1.016
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.025
+  Risk: 0.619 | Detection status: normal
+
+DEBUG t= 40: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.935 | Threat score: 1.184
+  Beliefs - Anchor: 0.286 | Traitor: 0.050 | System: 0.254
+  Risk: 0.812 | Detection status: FLAG
+
+DEBUG t= 41: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.914 | Threat score: 1.227
+  Beliefs - Anchor: 0.948 | Traitor: 0.050 | System: 0.929
+  Risk: 1.108 | Detection status: SUSPEND
+
+DEBUG t= 42: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.804 | Threat score: 1.094
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.013
+  Risk: 0.662 | Detection status: normal
+
+DEBUG t= 43: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.966 | Threat score: 1.107
+  Beliefs - Anchor: 0.027 | Traitor: 0.050 | System: 0.026
+  Risk: 0.675 | Detection status: normal
+
+DEBUG t= 44: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.897 | Threat score: 1.256
+  Beliefs - Anchor: 0.798 | Traitor: 0.050 | System: 0.775
+  Risk: 1.063 | Detection status: SUSPEND
+
+DEBUG t= 45: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.926 | Threat score: 1.250
+  Beliefs - Anchor: 0.646 | Traitor: 0.050 | System: 0.618
+  Risk: 0.998 | Detection status: ESCALATE
+
+DEBUG t= 46: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.881 | Threat score: 1.567
+  Beliefs - Anchor: 1.000 | Traitor: 0.050 | System: 0.964
+  Risk: 1.326 | Detection status: SUSPEND
+
+DEBUG t= 47: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.903 | Threat score: 1.251
+  Beliefs - Anchor: 0.998 | Traitor: 0.050 | System: 0.963
+  Risk: 1.136 | Detection status: SUSPEND
+
+DEBUG t= 48: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.879 | Threat score: 1.087
+  Beliefs - Anchor: 0.004 | Traitor: 0.050 | System: 0.017
+  Risk: 0.659 | Detection status: normal
+
+DEBUG t= 49: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.929 | Threat score: 0.860
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.016
+  Risk: 0.523 | Detection status: normal
+
+DEBUG t= 50: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.951 | Threat score: 1.269
+  Beliefs - Anchor: 0.022 | Traitor: 0.050 | System: 0.032
+  Risk: 0.774 | Detection status: normal
+
+DEBUG t= 51: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.919 | Threat score: 1.414
+  Beliefs - Anchor: 1.000 | Traitor: 0.050 | System: 0.969
+  Risk: 1.236 | Detection status: SUSPEND
+
+DEBUG t= 52: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.859 | Threat score: 1.280
+  Beliefs - Anchor: 0.007 | Traitor: 0.050 | System: 0.027
+  Risk: 0.779 | Detection status: normal
+
+DEBUG t= 53: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.923 | Threat score: 1.599
+  Beliefs - Anchor: 1.000 | Traitor: 0.050 | System: 0.962
+  Risk: 1.344 | Detection status: SUSPEND
+
+DEBUG t= 54: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.971 | Threat score: 1.090
+  Beliefs - Anchor: 0.047 | Traitor: 0.050 | System: 0.040
+  Risk: 0.670 | Detection status: normal
+
+DEBUG t= 55: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.942 | Threat score: 1.473
+  Beliefs - Anchor: 1.000 | Traitor: 0.050 | System: 0.965
+  Risk: 1.270 | Detection status: SUSPEND
+
+DEBUG t= 56: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.881 | Threat score: 0.982
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.015
+  Risk: 0.595 | Detection status: normal
+
+DEBUG t= 57: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.913 | Threat score: 1.475
+  Beliefs - Anchor: 1.000 | Traitor: 0.050 | System: 0.967
+  Risk: 1.272 | Detection status: SUSPEND
+
+DEBUG t= 58: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.866 | Threat score: 1.057
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.018
+  Risk: 0.642 | Detection status: normal
+
+DEBUG t= 59: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.915 | Threat score: 1.190
+  Beliefs - Anchor: 0.001 | Traitor: 0.050 | System: 0.016
+  Risk: 0.721 | Detection status: normal
+
+DEBUG t= 60: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.855 | Threat score: 1.242
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.013
+  Risk: 0.750 | Detection status: normal
+
+DEBUG t= 61: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.958 | Threat score: 1.138
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.013
+  Risk: 0.688 | Detection status: normal
+
+DEBUG t= 62: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.800 | Threat score: 1.182
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.015
+  Risk: 0.715 | Detection status: normal
+
+DEBUG t= 63: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.956 | Threat score: 1.464
+  Beliefs - Anchor: 1.000 | Traitor: 0.050 | System: 0.962
+  Risk: 1.263 | Detection status: SUSPEND
+
+DEBUG t= 64: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.959 | Threat score: 1.270
+  Beliefs - Anchor: 1.000 | Traitor: 0.050 | System: 0.970
+  Risk: 1.150 | Detection status: SUSPEND
+
+DEBUG t= 65: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.867 | Threat score: 1.028
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.017
+  Risk: 0.624 | Detection status: normal
+
+DEBUG t= 66: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.941 | Threat score: 1.189
+  Beliefs - Anchor: 0.876 | Traitor: 0.050 | System: 0.842
+  Risk: 1.050 | Detection status: SUSPEND
+
+DEBUG t= 67: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.864 | Threat score: 1.117
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.021
+  Risk: 0.678 | Detection status: normal
+
+DEBUG t= 68: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.920 | Threat score: 1.578
+  Beliefs - Anchor: 1.000 | Traitor: 0.050 | System: 0.969
+  Risk: 1.334 | Detection status: SUSPEND
+
+DEBUG t= 69: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.889 | Threat score: 1.646
+  Beliefs - Anchor: 1.000 | Traitor: 0.050 | System: 0.961
+  Risk: 1.372 | Detection status: SUSPEND
+
+DEBUG t= 70: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.933 | Threat score: 1.087
+  Beliefs - Anchor: 0.340 | Traitor: 0.050 | System: 0.303
+  Risk: 0.773 | Detection status: FLAG
+
+DEBUG t= 71: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.915 | Threat score: 1.456
+  Beliefs - Anchor: 1.000 | Traitor: 0.050 | System: 0.963
+  Risk: 1.258 | Detection status: SUSPEND
+
+DEBUG t= 72: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.824 | Threat score: 1.176
+  Beliefs - Anchor: 0.002 | Traitor: 0.050 | System: 0.013
+  Risk: 0.711 | Detection status: normal
+
+DEBUG t= 73: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.847 | Threat score: 1.031
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.017
+  Risk: 0.625 | Detection status: normal
+
+DEBUG t= 74: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.888 | Threat score: 1.009
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.025
+  Risk: 0.616 | Detection status: normal
+
+DEBUG t= 75: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.750 | Threat score: 0.685
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.025
+  Risk: 0.421 | Detection status: normal
+
+DEBUG t= 76: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.902 | Threat score: 1.278
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.010
+  Risk: 0.771 | Detection status: normal
+
+DEBUG t= 77: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.954 | Threat score: 1.247
+  Beliefs - Anchor: 0.002 | Traitor: 0.050 | System: 0.015
+  Risk: 0.754 | Detection status: normal
+
+DEBUG t= 78: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.931 | Threat score: 1.596
+  Beliefs - Anchor: 1.000 | Traitor: 0.050 | System: 0.959
+  Risk: 1.341 | Detection status: SUSPEND
+
+DEBUG t= 79: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.935 | Threat score: 1.111
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.014
+  Risk: 0.672 | Detection status: normal
+
+DEBUG t= 80: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.950 | Threat score: 1.352
+  Beliefs - Anchor: 0.994 | Traitor: 0.050 | System: 0.959
+  Risk: 1.195 | Detection status: SUSPEND
+
+DEBUG t= 81: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.850 | Threat score: 1.067
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.018
+  Risk: 0.647 | Detection status: normal
+
+DEBUG t= 82: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.933 | Threat score: 1.428
+  Beliefs - Anchor: 1.000 | Traitor: 0.050 | System: 0.967
+  Risk: 1.244 | Detection status: SUSPEND
+
+DEBUG t= 83: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.811 | Threat score: 1.090
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.017
+  Risk: 0.660 | Detection status: normal
+
+DEBUG t= 84: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.900 | Threat score: 1.075
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.023
+  Risk: 0.654 | Detection status: normal
+
+DEBUG t= 85: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.866 | Threat score: 1.102
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.015
+  Risk: 0.667 | Detection status: normal
+
+DEBUG t= 86: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.854 | Threat score: 1.106
+  Beliefs - Anchor: 0.001 | Traitor: 0.050 | System: 0.013
+  Risk: 0.669 | Detection status: normal
+
+DEBUG t= 87: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.936 | Threat score: 1.529
+  Beliefs - Anchor: 1.000 | Traitor: 0.050 | System: 0.959
+  Risk: 1.301 | Detection status: SUSPEND
+
+DEBUG t= 88: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.871 | Threat score: 1.186
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.015
+  Risk: 0.718 | Detection status: normal
+
+DEBUG t= 89: User   0 (MAL)
+  Type: MALICIOUS    | Action: NORMAL    
+  Signals max: 0.893 | Threat score: 1.175
+  Beliefs - Anchor: 0.000 | Traitor: 0.050 | System: 0.020
+  Risk: 0.713 | Detection status: normal
+
+========================================
+DEBUG: User 0 Journey Complete
+Total timesteps: 90
+Final Beliefs: {<UserType.LOYAL: 0>: np.float64(0.8817681188866264), <UserType.DISGRUNTLED: 1>: np.float64(0.09797423543184738), <UserType.MALICIOUS: 2>: np.float64(0.020257645681526208), '_threat_score': np.float64(0.08103058272610483), '_detection_status': 'normal'}
+Detection status: normal
+Detected: True
+========================================
+
+
+========================================
+DEBUG: User 99 Journey Begin
+User Type: LOYAL
+Initial Beliefs: {<UserType.LOYAL: 0>: 0.9, <UserType.DISGRUNTLED: 1>: 0.09, <UserType.MALICIOUS: 2>: 0.01}
+========================================
+
+
+============================================================
+DEBUG: User 99 (LOYAL) Signal Generation Start
+Initial signal values: ['0.276', '0.101', '0.181', '0.196', '0.070', '0.233', '0.181', '0.134', '0.179', '0.162']
+User type: LOYAL
+============================================================
+
+
+DEBUG t=  0: User  99 (LOY)
+  Type: LOYAL        | Action: NORMAL    
+  Signals max: 0.276 | Threat score: 0.170
+  Beliefs - Anchor: 0.000 | Traitor: 0.000 | System: 0.016
+  Risk: 0.109 | Detection status: normal
+
+DEBUG t= 10: User  99 (LOY)
+  Type: LOYAL        | Action: NORMAL    
+  Signals max: 0.277 | Threat score: 0.132
+  Beliefs - Anchor: 0.000 | Traitor: 0.000 | System: 0.013
+  Risk: 0.084 | Detection status: normal
+DEBUG: User 99 generated legitimate suspicious activity at channel 3
+
+DEBUG t= 20: User  99 (LOY)
+  Type: LOYAL        | Action: NORMAL    
+  Signals max: 0.384 | Threat score: 0.142
+  Beliefs - Anchor: 0.000 | Traitor: 0.000 | System: 0.011
+  Risk: 0.090 | Detection status: normal
+
+DEBUG t= 30: User  99 (LOY)
+  Type: LOYAL        | Action: NORMAL    
+  Signals max: 0.367 | Threat score: 0.172
+  Beliefs - Anchor: 0.000 | Traitor: 0.000 | System: 0.012
+  Risk: 0.108 | Detection status: normal
+
+DEBUG t= 40: User  99 (LOY)
+  Type: LOYAL        | Action: NORMAL    
+  Signals max: 0.381 | Threat score: 0.153
+  Beliefs - Anchor: 0.000 | Traitor: 0.000 | System: 0.003
+  Risk: 0.093 | Detection status: normal
+DEBUG: User 99 generated high signal at channel 0
+
+DEBUG t= 50: User  99 (LOY)
+  Type: LOYAL        | Action: NORMAL    
+  Signals max: 0.370 | Threat score: 0.120
+  Beliefs - Anchor: 0.000 | Traitor: 0.000 | System: 0.012
+  Risk: 0.077 | Detection status: normal
+DEBUG: User 99 generated high signal at channel 2
+
+DEBUG t= 60: User  99 (LOY)
+  Type: LOYAL        | Action: NORMAL    
+  Signals max: 0.296 | Threat score: 0.099
+  Beliefs - Anchor: 0.000 | Traitor: 0.000 | System: 0.013
+  Risk: 0.064 | Detection status: normal
+
+DEBUG t= 70: User  99 (LOY)
+  Type: DISGRUNTLED  | Action: NORMAL    
+  Signals max: 0.601 | Threat score: 0.237
+  Beliefs - Anchor: 0.000 | Traitor: 0.000 | System: 0.004
+  Risk: 0.144 | Detection status: normal
+
+DEBUG t= 80: User  99 (LOY)
+  Type: DISGRUNTLED  | Action: NORMAL    
+  Signals max: 0.599 | Threat score: 0.194
+  Beliefs - Anchor: 0.000 | Traitor: 0.000 | System: 0.001
+  Risk: 0.117 | Detection status: normal
+
+DEBUG t= 89: User  99 (LOY)
+  Type: DISGRUNTLED  | Action: NORMAL    
+  Signals max: 0.563 | Threat score: 0.222
+  Beliefs - Anchor: 0.000 | Traitor: 0.000 | System: 0.007
+  Risk: 0.136 | Detection status: normal
+
+========================================
+DEBUG: User 99 Journey Complete
+Total timesteps: 90
+Final Beliefs: {<UserType.LOYAL: 0>: np.float64(0.8935611563592833), <UserType.DISGRUNTLED: 1>: np.float64(0.09928457292880927), <UserType.MALICIOUS: 2>: np.float64(0.007154270711907491), '_threat_score': np.float64(0.028617082847629965), '_detection_status': 'normal'}
+Detection status: normal
+Detected: False
+========================================
+
+
+############################################################
+DEBUG: SIMULATION COMPLETE
+Total users: 100
+True Positives: 1
+False Positives: 0
+False Negatives: 14
+Tracked User 0 (Malicious): DETECTED
+Tracked User 99 (Loyal): NOT DETECTED
+############################################################
+
+C:\Users\Javed\AppData\Local\Temp\ipykernel_12316\738115162.py:109: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
